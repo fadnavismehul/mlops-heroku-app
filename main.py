@@ -14,8 +14,7 @@ app = FastAPI()
 
 @app.get("/")
 async def say_hello():
-    return ({"greeting": ("Hi, welcome to the MLDevops Course !"
-                        + "This is the API for the assigment for Module 3")})
+    return ({"greeting": ("Hi, welcome to the MLDevops Course ! This is the API for the assigment for Module 3")})
 
 # Loading in model from serialized .pkl file
 pkl_filename = "rf_model.pkl"
