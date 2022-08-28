@@ -7,7 +7,7 @@ from sklearn.preprocessing import binarize
 from model.ml.data import process_data
 from model.ml.model import train_model, compute_model_metrics, inference
 
-
+import pickle
 import pandas as pd
 
 # Add code to load in the data.
@@ -44,6 +44,11 @@ X_test, y_test, encoder, lb = process_data(
 # Train and save a model.
 
 trained_model = train_model(X_train, y_train)
+
+pkl_filename = "rf_model.pkl"
+with open(pkl_filename, 'wb') as file:
+    pickle.dump([trained_model,lb,encoder], file)
+
 
 preds = inference(trained_model, X_test)
 
