@@ -16,66 +16,17 @@ def test_predict():
     data = json.dumps(df.to_dict(orient='rows'))
     response = client.post("/predict",data=data)
     assert response.status_code == 200
-    output = response.json()
-    print(output)
-
-# Samples
-
-# def test_read_item():
-#     response = client.get("/items/foo", headers={"X-Token": "coneofsilence"})
-#     assert response.status_code == 200
-#     assert response.json() == {
-#         "id": "foo",
-#         "title": "Foo",
-#         "description": "There goes my hero",
-#     }
-
-
-# def test_read_item_bad_token():
-#     response = client.get("/items/foo", headers={"X-Token": "hailhydra"})
-#     assert response.status_code == 400
-#     assert response.json() == {"detail": "Invalid X-Token header"}
-
-
-# def test_read_inexistent_item():
-#     response = client.get("/items/baz", headers={"X-Token": "coneofsilence"})
-#     assert response.status_code == 404
-#     assert response.json() == {"detail": "Item not found"}
-
-
-# def test_create_item():
-#     response = client.post(
-#         "/items/",
-#         headers={"X-Token": "coneofsilence"},
-#         json={"id": "foobar", "title": "Foo Bar", "description": "The Foo Barters"},
-#     )
-#     assert response.status_code == 200
-#     assert response.json() == {
-#         "id": "foobar",
-#         "title": "Foo Bar",
-#         "description": "The Foo Barters",
-#     }
-
-
-# def test_create_item_bad_token():
-#     response = client.post(
-#         "/items/",
-#         headers={"X-Token": "hailhydra"},
-#         json={"id": "bazz", "title": "Bazz", "description": "Drop the bazz"},
-#     )
-#     assert response.status_code == 400
-#     assert response.json() == {"detail": "Invalid X-Token header"}
-
-
-# def test_create_existing_item():
-#     response = client.post(
-#         "/items/",
-#         headers={"X-Token": "coneofsilence"},
-#         json={
-#             "id": "foo",
-#             "title": "The Foo ID Stealers",
-#             "description": "There goes my stealer",
-#         },
-#     )
-#     assert response.status_code == 400
-#     assert response.json() == {"detail": "Item already exists"}
+    
+def test_predict_one():
+    single_sample =  {"age": 34, "workclass": "Private", "fnlgt": 287737, "education": "Some-college", "education-num": 10, "marital-status": "Married-civ-spouse", "occupation": "Exec-managerial", "relationship": "Wife", "race": "White", "sex": "Female", "capital-gain": 0, "capital-loss": 1485, "hours-per-week": 40, "native-country": "United-States"}
+    data = json.dumps(single_sample)
+    response = client.post("/predict",data=data)
+    assert response.status_code == 200
+    assert response.json() == {"preds":[1]}
+    
+def test_predict_zero():
+    single_sample = {"age": 24, "workclass": "State-gov", "fnlgt": 123160, "education": "Masters", "education-num": 14, "marital-status": "Married-spouse-absent", "occupation": "Prof-specialty", "relationship": "Not-in-family", "race": "Asian-Pac-Islander", "sex": "Female", "capital-gain": 0, "capital-loss": 0, "hours-per-week": 10, "native-country": "China"}
+    data = json.dumps(single_sample)
+    response = client.post("/predict",data=data)
+    assert response.status_code == 200
+    assert response.json() == {"preds":[0]}       
