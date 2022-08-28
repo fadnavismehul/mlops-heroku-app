@@ -1,3 +1,5 @@
+import pytest
+import pandas as pd
 # Testing Module
 # TODO implement tests:
 # 1. Check column list
@@ -5,6 +7,21 @@
 # 3. A test case for the GET method. This MUST test both the status code as well as the contents of the request object.
 #  One test case for EACH of the possible inferences (results/outputs) of the ML model.
 # 4. Test for POST
+
+@pytest.fixture(scope='session')
+def data():
+
+    # Download input artifact. This will also note that this script is using this
+    # particular version of the artifact
+    data_path = 'data/census_cleaned.csv'
+    df = pd.read_csv(data_path)
+
+    if data_path is None:
+        pytest.fail("You must provide the --csv option on the command line")
+
+    df = pd.read_csv(data_path)
+
+    return df
 
 def test_column_names(data):
 
