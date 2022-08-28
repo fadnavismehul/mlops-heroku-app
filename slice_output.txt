@@ -1,0 +1,16 @@
+{'slice_value': 'Bachelors', 'Precision': 0.9502487562189055, 'Recall': 0.9459702836560108, 'fbeta': 0.9481046931407943}
+{'slice_value': 'HS-grad', 'Precision': 0.9351669941060904, 'Recall': 0.8525373134328358, 'fbeta': 0.8919425359150531}
+{'slice_value': '11th', 'Precision': 0.9791666666666666, 'Recall': 0.7833333333333333, 'fbeta': 0.8703703703703703}
+{'slice_value': 'Masters', 'Precision': 0.9641350210970464, 'Recall': 0.9530761209593326, 'fbeta': 0.9585736759307812}
+{'slice_value': '9th', 'Precision': 1.0, 'Recall': 0.8148148148148148, 'fbeta': 0.8979591836734693}
+{'slice_value': 'Some-college', 'Precision': 0.9418153607447634, 'Recall': 0.875270367700072, 'fbeta': 0.9073243647234679}
+{'slice_value': 'Assoc-acdm', 'Precision': 0.9529411764705882, 'Recall': 0.9169811320754717, 'fbeta': 0.9346153846153846}
+{'slice_value': 'Assoc-voc', 'Precision': 0.968944099378882, 'Recall': 0.8642659279778393, 'fbeta': 0.9136163982430454}
+{'slice_value': '7th-8th', 'Precision': 1.0, 'Recall': 0.775, 'fbeta': 0.8732394366197184}
+{'slice_value': 'Doctorate', 'Precision': 0.967741935483871, 'Recall': 0.9803921568627451, 'fbeta': 0.9740259740259739}
+{'slice_value': 'Prof-school', 'Precision': 0.9742388758782201, 'Recall': 0.983451536643026, 'fbeta': 0.9788235294117648}
+{'slice_value': '5th-6th', 'Precision': 1.0, 'Recall': 0.9375, 'fbeta': 0.967741935483871}
+{'slice_value': '10th', 'Precision': 0.8928571428571429, 'Recall': 0.8064516129032258, 'fbeta': 0.8474576271186439}
+{'slice_value': '1st-4th', 'Precision': 1.0, 'Recall': 1.0, 'fbeta': 1.0}
+{'slice_value': 'Preschool', 'Precision': 1.0, 'Recall': 1.0, 'fbeta': 1.0}
+{'slice_value': '12th', 'Precision': 1.0, 'Recall': 0.8787878787878788, 'fbeta': 0.9354838709677419}
