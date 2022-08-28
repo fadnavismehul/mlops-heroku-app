@@ -36,5 +36,3 @@ def test_null_presence(data):
 #         assert (
 #             2.5 > avg_value > 1.5
 #         ), f"For {cat_feat}, average of {avg_value} not between 2.5 and 3.5."
-
-
