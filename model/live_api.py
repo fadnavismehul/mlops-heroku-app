@@ -23,5 +23,5 @@ data = json.dumps(single_sample)
 response = requests.post('https://mldevops-test.herokuapp.com/predict',
                         data=data)
 
-
-print(response.content.decode())
+print(f"Status Code: {response.status_code}")
+print(f"Response: {response.content.decode()}")
