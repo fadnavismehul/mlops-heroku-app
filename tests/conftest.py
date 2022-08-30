@@ -1,6 +1,6 @@
 import pytest
 import pandas as pd
-
+import pickle
 
 @pytest.fixture(scope='session')
 def data():
@@ -16,3 +16,12 @@ def data():
     df = pd.read_csv(data_path)
 
     return df
+
+@pytest.fixture(scope='session')
+def model():
+    # Loading in model from serialized .pkl file
+    pkl_filename = "rf_model.pkl"
+    with open(pkl_filename, 'rb') as file:
+        rf_model, lb, encoder = pickle.load(file)
+        
+    return rf_model, lb, encoder
